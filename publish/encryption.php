@@ -15,7 +15,7 @@ return [
         'aes' => [
             'class' => \HyperfAi\Encryption\Driver\AesDriver::class,
             'options' => [
-                'key' => env('AES_KEY', ''),
+                'key' => env('AES_KEY', 'hyperfaihyperfaihyperf'),
                 'cipher' => env('AES_CIPHER', 'AES-128-CBC'),
             ],
         ],
