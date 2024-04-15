@@ -29,7 +29,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "ext-openssl": "*",
-        "ext-swoole": ">=5.1",
+        "ext-swoole": ">=5.0",
         "hyperf/command": "^3.0",
         "hyperf/di": "^3.0",
         "hyperf/framework": "^3.0"
