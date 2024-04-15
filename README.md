@@ -38,7 +38,7 @@ declare(strict_types=1);
 namespace App\Http\Controller;
 
 use Hyperf\HttpServer\Request;
-use HyperfExt\Encryption\Crypt;
+use HyperfAi\Encryption\Crypt;
 
 class UpdatePasswordController
 {
@@ -56,7 +56,7 @@ class UpdatePasswordController
 加密的时候，对象和数组加密过的值都需要通过 serialize 序列化后传递。因此，非 PHP 客户端接收加密值，需要对数据进行 unserialize 反序列化。如果想要在不序列化的情况下加密或解密值，你可以将 `Crypt::encrypt` 方法的第二个参数设置为 `false`：
 
 ```php
-use HyperfExt\Encryption\Crypt;
+use HyperfAi\Encryption\Crypt;
 
 $encrypted = Crypt::encrypt('Hello world.', false);
 $decrypted = Crypt::decrypt($encrypted);
@@ -64,11 +64,11 @@ $decrypted = Crypt::decrypt($encrypted);
 
 ### 解密
 
-你可以使用 `Crypt::decrypt` 方法来进行解密。如果该值不能被正确解密，例如 MAC 无效时，会抛出异常 `HyperfExt\Encryption\Exception\DecryptException`：
+你可以使用 `Crypt::decrypt` 方法来进行解密。如果该值不能被正确解密，例如 MAC 无效时，会抛出异常 `HyperfAi\Encryption\Exception\DecryptException`：
 
 ```php
-use HyperfExt\Encryption\Crypt;
-use HyperfExt\Encryption\Exception\DecryptException;
+use HyperfAi\Encryption\Crypt;
+use HyperfAi\Encryption\Exception\DecryptException;
 
 try {
     $decrypted = Crypt::decrypt($encryptedValue);
@@ -80,7 +80,7 @@ try {
 ### 使用指定驱动
 
 ```php
-use HyperfExt\Encryption\Crypt;
+use HyperfAi\Encryption\Crypt;
 
 $hasher = Crypt::getDriver('rsa'); // RSA 尚未实现
 $hasher->encrypt('Hello world.', false);
